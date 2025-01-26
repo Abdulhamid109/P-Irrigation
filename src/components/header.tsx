@@ -10,7 +10,7 @@ export function Navv() {
   const [query, setQuery] = useState("");
   const router = useRouter(); // To navigate programmatically
 
-  const handleSearchQuery = async (event) => {
+  const handleSearchQuery = async (event:React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter" && query.trim() !== "") {
       try {
         // You can choose to fetch data here or navigate to a search results page
