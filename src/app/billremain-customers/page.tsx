@@ -25,7 +25,7 @@ export default function BillPaidPage() {
         
         // Fetch the customer details for each customerId
         const customersWithDetails = await Promise.all(
-          customerData.map(async (customer: any) => {
+          customerData.map(async (customer: { customerId: string }) => {
             const customerDetailsResponse = await axios.get(
               `/api/customer/${customer.customerId}` // Make sure your backend supports this route
             );
@@ -41,6 +41,7 @@ export default function BillPaidPage() {
         setCustomers(customersWithDetails);
         setLoading(false);
       } catch (err) {
+        console.log(err);
         setError("No customers");
         setLoading(false);
       }

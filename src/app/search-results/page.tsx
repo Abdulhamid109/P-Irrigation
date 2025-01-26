@@ -25,9 +25,9 @@ export default function SearchResults() {
       try {
         const response = await axios.get(`/api/search?name=${query}`);
         setCustomers(response.data.customers || []);
-      } catch (error:any) {
+      } catch (error) {
         console.error("Failed to fetch search results:", error);
-        setError(error.response?.data?.error || "Failed to fetch customers.");
+        setError("Failed to fetch customers.");
         setLoading(false);
       } finally {
         setLoading(false);

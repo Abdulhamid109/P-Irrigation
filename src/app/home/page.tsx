@@ -24,8 +24,8 @@ export default function HomePage() {
         const response = await axios.get("/api/customer");
         setCustomers(response.data.success); // Assuming your backend sends { customers: [...] }
         setLoading(false);
-      } catch (err: any) {
-        setError(err.response?.data?.error || "Failed to fetch customers.");
+      } catch (err) {
+        setError("Failed to fetch customers."+err);
         setLoading(false);
       }
     };

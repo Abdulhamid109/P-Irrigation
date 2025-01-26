@@ -4,7 +4,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import {  useRouter, useSearchParams } from "next/navigation";
 
-const EditCrop = ({ Crop }) => {
+interface Crop {
+  CropName: string;
+  FieldAmount: number;
+  CropTime: string;
+  BillPaid: number;
+  _id?: string;
+}
+const EditCrop = ({ Crop }:{ Crop?: Crop }) => {
   const searchParams = useSearchParams();
   const cropId = searchParams.get("cropId"); // Get customerId from query params
   const router = useRouter();

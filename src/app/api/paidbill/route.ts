@@ -1,6 +1,5 @@
 import { connect } from "@/DbConfig/dbconfig";
 import Crop from "@/models/cropModal";
-import Customer from "@/models/customerModal";
 import { NextResponse } from "next/server";
 
 

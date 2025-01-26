@@ -85,7 +85,7 @@ export async function POST(request: NextRequest) {
 
     const savedCrop = await newCrop.save();
     const addcropId = await Customer.findByIdAndUpdate({_id:customerId},{CropId:savedCrop._id});
-
+    console.log(addcropId);
     return NextResponse.json({ success: savedCrop }, { status: 201 });
   } catch (error) {
     console.error("Error creating crop:", error);
